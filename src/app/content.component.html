@@ -1,0 +1,188 @@
+
+
+<div class="content-header">
+  <img src="assets/arreev-icon.png" height="32" style="margin-right:10px;margin-left:3px;">
+  <div class="content-header-menu">
+    <span class="content-header-menu-item">solutions</span>
+    <span class="content-header-menu-item">news</span>
+    <span class="content-header-menu-item">about</span>
+  </div>
+  <div class="content-actions">
+    <!--<i class="fa fa-sign-in"></i>-->
+    <!--<span class="content-header-menu-item" style="padding-left:0px;">sign in</span>-->
+    <i class="fa fa-external-link"></i>
+    <span class="content-header-menu-item" style="padding-left:0px;margin-right:5px;">create account</span>
+  </div>
+  <button pButton type="button" icon="fa-cube" label="planner" (click)="onGoPlanner()"></button>
+</div>
+
+<div class="ui-grid ui-grid-responsive ui-fluid">
+  <div class="content-section-spacer"></div>
+
+  <div class="ui-grid-row">
+    <div class="ui-grid-col-5">
+      <div class="content-arreev-logo" [@logo-fade-in]>
+        <img src="assets/arreev-icon.png" height="64">
+      </div>
+    </div>
+    <div style="width:15px;"></div>
+    <div class="ui-grid-col-7">
+      <div class="content-arreev-letters" [@arreev-slide-in-stagger]="letters.length">
+        <img *ngFor="let letter of letters" src="assets/{{letter}}.png">
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section-spacer"></div>
+
+  <div class="ui-grid-row">
+    <div class="ui-grid-col-12">
+      <div class="content-blurb-large">
+        <u>Free</u> route planning and following solutions.
+      </div>
+    </div>
+  </div>
+  <div class="content-blurb-spacer"></div>
+  <div class="ui-grid-row">
+    <div class="ui-grid-col-12">
+      <div class="content-blurb-small">
+        Easy to use.&nbsp;&nbsp;<b style="color:black;">No</b> hardware required.&nbsp;&nbsp;<b style="color:black;">No</b> monthly fees.
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section-spacer"></div>
+
+  <div class="ui-grid-row">
+    <div class="ui-grid-col-2">&nbsp;</div>
+    <div class="ui-grid-col-8">
+      <div class="content-blurb-small">
+        Arreev allows you to set up a travel path from your start to your destination ... your friends and family can track your progress until you arrive safely at your destination ... your GPS location is sent from <u>your phone</u> or your car's built-in <u>Android-Auto or CarPlay</u> system.
+      </div>
+    </div>
+    <div class="ui-grid-col-2">&nbsp;</div>
+  </div>
+
+  <div class="content-section-spacer"></div>
+
+  <div class="ui-grid-row">
+    <div class="ui-grid-col-5">&nbsp;</div>
+    <div class="ui-grid-col-2">
+      <div>
+        <button pButton type="button"
+                style="padding-top:10px;padding-bottom:10px"
+                icon="fa-cube" label="Get Started" (click)="onCreateAccount()">
+        </button>
+      </div>
+    </div>
+    <div class="ui-grid-col-5">&nbsp;</div>
+  </div>
+
+  <div class="content-section-spacer"></div>
+
+  <div class="ui-grid-row">
+    <div class="ui-grid-col-2">&nbsp;</div>
+    <div class="ui-grid-col-8">
+      <img src="assets/image01.png" width="100%" [@image-fade-in]>
+    </div>
+    <div class="ui-grid-col-2">&nbsp;</div>
+  </div>
+  <div class="ui-grid-row">
+    <div class="ui-grid-col-2">&nbsp;</div>
+    <div class="ui-grid-col-8">
+      <div style="text-align:right;">
+        <img src="assets/appstore.png" [@image-fade-in] height="48" (click)="onAppStore()" style="margin-right:10px;">
+        <img src="assets/googleplay.png" [@image-fade-in] height="48" (click)="onGooglePlay()" style="cursor:pointer;margin-right:20px;">
+      </div>
+    </div>
+    <div class="ui-grid-col-2">&nbsp;</div>
+  </div>
+
+
+  <div class="content-section-spacer"></div>
+
+  <div class="ui-grid-row">
+    <div class="ui-grid-col-12">
+      <div class="content-blurb-large">
+        Private and secure - you choose who can subscribe to your routes.
+      </div>
+    </div>
+  </div>
+  <div class="content-blurb-spacer"></div>
+  <div class="ui-grid-row">
+    <div class="ui-grid-col-2"></div>
+    <div class="ui-grid-col-8">
+      <div class="content-blurb-small">
+        Taking a road trip ? Travel with peace of mind. Set up your route in myArreev, add car(s), invite
+        subscribers. Then your guests can follow your progress until you safely arrive at your destination.
+      </div>
+    </div>
+    <div class="ui-grid-col-2"></div>
+  </div>
+
+  <div class="content-section-spacer"></div>
+
+  <div class="ui-grid-row">
+    <div class="ui-grid-col-12">
+      <div class="content-blurb-large">
+        Easy to use.
+      </div>
+    </div>
+  </div>
+  <div class="content-blurb-spacer"></div>
+  <div class="ui-grid-row">
+    <div class="ui-grid-col-2"></div>
+    <div class="ui-grid-col-8">
+      <div class="content-blurb-small">
+        Have a side business renting bicycles at the beach ? Use arreev to manage your bikes and monitor
+        their locations.
+      </div>
+    </div>
+    <div class="ui-grid-col-2"></div>
+  </div>
+
+  <div class="content-section-spacer"></div>
+
+  <div class="ui-grid-row">
+    <div class="ui-grid-col-12">
+      <div class="content-blurb-large">
+        Earn rewards.
+      </div>
+    </div>
+  </div>
+  <div class="content-blurb-spacer"></div>
+  <div class="ui-grid-row">
+    <div class="ui-grid-col-2"></div>
+    <div class="ui-grid-col-8">
+      <div class="content-blurb-small">
+        Using public transportation ? Enable U-Track feature on your mobile app so that others can follow. Get points and earn rewards.
+      </div>
+    </div>
+    <div class="ui-grid-col-2"></div>
+  </div>
+
+  <div class="content-section-spacer"></div>
+  <div class="content-section-spacer"></div>
+  <div class="content-section-spacer"></div>
+  <div class="content-section-spacer"></div>
+  <div class="content-section-spacer"></div>
+
+</div>
+
+<div class="content-footer">
+  <span class="content-footer-item">&copy;2018 arreev.com All rights reserved.</span>
+</div>
+
+<p-dialog [(visible)]="showdemoconsolemessage" [modal]="true" [resizable]="true" appendTo="body">
+  <p-header>prototype demo site</p-header>
+  <div>This is a prototype web-site demo.</div>
+  <div style="margin-bottom: 15px;">Click OK to continue on to the my.arreev console.</div>
+  <button pButton type="button" icon="fa-cube" label="ok" (click)="onToMyArreev()"></button>
+</p-dialog>
+
+<p-dialog [(visible)]="showdemoapplicationmessage" [modal]="true" [resizable]="true" appendTo="body">
+  <p-header>prototype demo application</p-header>
+  <div>This is a prototype demo application.</div>
+  <div style="margin-bottom: 15px;">Click OK to continue on to the Google Play store.</div>
+  <button pButton type="button" icon="fa-cube" label="ok" (click)="onToPlay()"></button>
+</p-dialog>

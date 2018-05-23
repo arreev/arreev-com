@@ -1,0 +1,95 @@
+
+.content-header {
+  display: flex;
+  flex-direction: row;
+
+  padding: 5px;
+
+  border-bottom: 1px solid #EAEBEC;
+}
+
+.content-header-menu {
+  flex: 1 1 auto;
+  text-align: left;
+  padding-top: 6px;
+}
+
+.content-header-menu-item {
+  font-size: 12pt;
+  font-weight: bold;
+
+  padding-left: 10px;
+  padding-right: 10px;
+
+  /*cursor: pointer;*/
+  color: cornflowerblue;
+}
+
+.content-actions {
+  padding-top: 6px;
+
+  margin-left: 10px;
+  margin-right: 10px;
+
+  color: cornflowerblue;
+}
+
+
+.content-arreev-logo {
+  text-align: right;
+  width: 100%;
+}
+
+.content-arreev-letters {
+  text-align: left;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.content-section-spacer {
+  height: 25px;
+}
+
+.content-blurb-spacer {
+  height: 5px;
+}
+
+.content-blurb-large {
+  width: 100%;
+  font-size: 20pt;
+  color: slateblue;
+  text-align: center;
+}
+
+.content-blurb-medium {
+  width: 100%;
+  font-size: 15pt;
+  color: mediumslateblue;
+  text-align: center;
+}
+
+.content-blurb-small {
+  width: 100%;
+  font-size: 13pt;
+  color: cornflowerblue;
+  text-align: center;
+}
+
+.content-footer {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+
+  padding: 5px;
+
+  border-top: 1px solid #E0E8EA;
+}
+
+.content-footer-item {
+  font-size: 10pt;
+  font-weight: normal;
+
+  color: cornflowerblue;
+}
+
+

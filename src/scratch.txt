@@ -1,0 +1,38 @@
+import { Component } from '@angular/core';
+import { animate,query,stagger,style,transition,trigger } from '@angular/animations';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  animations: [
+    trigger('logo-in',[
+      transition( ':enter',[
+        style({ transform:'translateX(-100%)' } ),animate('250ms ease-in' )
+      ] )
+    ] ),
+    trigger('logo-fade-in',[
+      transition( ':enter',[
+        style({ opacity:0 } ),
+        animate('1000ms ease-in',style({ opacity:1 } ) )
+      ] )
+    ] ),
+    trigger('arreev-in',[
+      transition(':enter',[
+        style({ transform:'translateX(+100%)' } ),animate('250ms ease-in' )
+      ] )
+    ] ),
+    trigger('arreev-in-stagger',[
+      transition('* => *',[
+        query(':enter',[
+          style({ opacity:0 } ),
+          stagger(100,[ animate('250ms',style({ opacity:1 } ) ) ] )
+        ] )
+      ] )
+    ] )
+  ]
+})
+export class AppComponent
+{
+  letters: string[] = [ 'a','r','r','e','e','v' ];
+}
