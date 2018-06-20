@@ -14,3 +14,14 @@ html,body {
 .spacer {
   flex: 1 1 auto;
 }
+
+.p-dialog {
+  padding: 0;
+}
+
+.ui-toolbar {
+  border: none;
+  background-color: transparent;
+  background: transparent;
+}
+

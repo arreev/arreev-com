@@ -1,29 +1,11 @@
 
 <div class="app-container">
-
-  <!--
-  <div class="app-header">
-    <div class="app-header-bar">
-      <div class="app-header-icon"><i class="fa fa-bars" (click)="sidenav.toggle()" [@sidenav-animation]="sidenavstate"></i></div>
-    </div>
-  </div>
-  -->
-
   <mat-sidenav-container class="app-content">
-    <!-- https://material.angular.io/components/sidenav/api -->
     <mat-sidenav #sidenav mode="side" opened="false" position="start" class="app-sidenav" (openedStart)="openedStart()" (closedStart)="closedStart()">
-      <!-- component goes here -->
     </mat-sidenav>
     <div class="app-editor">
-      <app-content></app-content>
+      <router-outlet></router-outlet>
     </div>
   </mat-sidenav-container>
-
-  <!--
-  <div class="app-footer">
-    <div class="app-footer-bar">
-    </div>
-  </div>
-  -->
-
 </div>
+

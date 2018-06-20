@@ -92,4 +92,35 @@
   color: cornflowerblue;
 }
 
+.create-message {
+  font-size: 9pt;
+  color: orangered;
+}
 
+.field {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.field-label {
+  display: flex;
+  flex-direction: column;
+}
+.field-spacer { flex:1; }
+.field-name {
+  color: #88AAEE;
+  font-weight: normal;
+  font-style: normal;
+  margin-bottom: 3px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.home-already {
+  padding: 8px;
+  margin-top: 15px;
+  font-weight: normal;
+  border: 1px solid #AABBDD;
+  border-radius: 6px;
+}

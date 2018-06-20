@@ -1,0 +1,127 @@
+
+<div *ngIf="!declined && !expired && !accepted && ready" class="accept-invitation-container">
+
+  <div class="accept-invitation-form">
+    <div class="ui-grid ui-grid-responsive ui-fluid">
+
+      <div style="height:5px;"></div>
+
+      <div class="accept-invitation-header">
+        <div>
+          <img src="assets/arreev-icon.png" height="48">
+        </div>
+        <div style="flex:1">&nbsp;</div>
+        <div>
+          <img src="assets/a.png" height="44">
+          <img src="assets/r.png" height="44">
+          <img src="assets/r.png" height="44">
+          <img src="assets/e.png" height="44">
+          <img src="assets/e.png" height="44">
+          <img src="assets/v.png" height="44">
+        </div>
+      </div>
+
+      <div style="height:20px;"></div>
+
+      <div><b>{{name}}</b> has sent you this invitation to follow them on Arreev.</div>
+      <div style="height:10px;"></div>
+
+      <div>Please sign-in to your Arreev account to accept this invitation.</div>
+      <div>If you do not have an account, you may create a free one now.</div>
+
+      <div style="height:20px;"></div>
+
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-8">
+          <input pInputText type="email" placeholder="email" [(ngModel)]="email" readonly/>
+        </div>
+        <div class="ui-grid-col-4">
+          <div style="font-size:.705em;color:gray;width:144px;float:right;color:gray;">
+              <span *ngIf="!working" style="cursor:pointer;" (click)="onNotYou()">not you ?</span>
+              <span *ngIf="working" style="" >not you ?</span>
+          </div>
+        </div>
+      </div>
+      <div style="height:5px;"></div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-8">
+          <input pInputText type="password" placeholder="password" [(ngModel)]="password"/>
+        </div>
+        <div class="ui-grid-col-4">
+          <button pButton type="button" [disabled]="!password || working" label="create" icon="fa-plus-circle" class="ui-button-secondary" (click)="onCreate()" style="width:144px;float:right;color:orange;"></button>
+        </div>
+      </div>
+
+      <span style="color:#FFAA88;font-size:.725em;">&nbsp;{{errormessage}}</span>
+
+      <div style="height:50px;"></div>
+
+      <div class="accept-invitation-footer">
+        <div style="font-size:.725em;color:gray;margin-bottom:2px;">sign-in to your account and acccept this invitation</div>
+      </div>
+      <div class="accept-invitation-footer">
+        <button pButton [disabled]="!password || working" type="button" label="accept" icon="fa-check-circle" (click)="onSignIn()" style="width:274px;"></button>
+      </div>
+
+      <div style="height:20px;"></div>
+      <div class="accept-invitation-footer">
+        <span *ngIf="!working" style="cursor:pointer;font-size:.8em;color:gray;" (click)="onDecline()">no thank you</span>
+        <span *ngIf="working" style="font-size:.8em;color:gray;">no thank you</span>
+      </div>
+
+      <div>
+        <span *ngIf="!working">&nbsp;</span>
+        <img *ngIf="working" src="assets/working.gif">
+      </div>
+  </div>
+  </div>
+
+</div>
+
+<div *ngIf="declined && !expired" class="accept-invitation-container">
+  <div class="accept-invitation-form">
+    <div class="ui-grid ui-grid-responsive ui-fluid">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-12">
+          <span>You have declined the invitation.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="expired" class="accept-invitation-container">
+  <div class="accept-invitation-form">
+    <div class="ui-grid ui-grid-responsive ui-fluid">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-12">
+          <span>Sorry, this invitation has expired.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="accepted" class="accept-invitation-container">
+  <div class="accept-invitation-form">
+    <div class="ui-grid ui-grid-responsive ui-fluid">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-12">
+          <span>{{name}} thanks you for accepting this invitation !</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="errored" class="accept-invitation-container">
+  <div class="accept-invitation-form">
+    <div class="ui-grid ui-grid-responsive ui-fluid">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-12">
+          <span>Unable to process your acceptance.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

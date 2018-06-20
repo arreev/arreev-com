@@ -1,7 +1,9 @@
 
-import { Component,OnInit,AfterViewInit,OnDestroy } from '@angular/core';
-
 import { animate,query,stagger,state,style,transition,trigger } from '@angular/animations';
+import { Component,OnInit,AfterViewInit,OnDestroy,Input } from '@angular/core';
+import { environment } from '../environments/environment';
+
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +25,14 @@ export class AppComponent implements OnInit,AfterViewInit,OnDestroy
 {
   sidenavstate = '';
 
-  constructor() {}
+  constructor() {
+    console.log( 'AppComponent' );
+
+    firebase.initializeApp( environment.firebase );
+    console.log( 'localStorage.removeItem...' );
+    localStorage.removeItem('firebase:previous_websocket_failure' ); // as per bug report
+    console.log( 'localStorage.removeItem ok' );
+  }
 
   ngOnInit(): void {}
   ngAfterViewInit(): void {}
