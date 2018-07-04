@@ -27,9 +27,9 @@
       <div style="height:10px;"></div>
 
       <div>Please sign-in to your Arreev account to accept this invitation.</div>
-      <div>If you do not have an account, you may create a free one now.</div>
+      <div>If you do not have an account, you may <span style="font-weight:bold;cursor:pointer;color:blue;" (click)="onCreateFreeAccountNow()"><i>create a free one</i></span> now.</div>
 
-      <div style="height:20px;"></div>
+      <div style="height:25px;"></div>
 
       <div class="ui-grid-row">
         <div class="ui-grid-col-8">
@@ -48,13 +48,13 @@
           <input pInputText type="password" placeholder="password" [(ngModel)]="password"/>
         </div>
         <div class="ui-grid-col-4">
-          <button pButton type="button" [disabled]="!password || working" label="create" icon="fa-plus-circle" class="ui-button-secondary" (click)="onCreate()" style="width:144px;float:right;color:orange;"></button>
+          <!--<button pButton type="button" [disabled]="!password || working" label="create" icon="fa-plus-circle" class="ui-button-secondary" (click)="onCreate()" style="width:144px;float:right;color:orange;"></button>-->
         </div>
       </div>
 
       <span style="color:#FFAA88;font-size:.725em;">&nbsp;{{errormessage}}</span>
 
-      <div style="height:50px;"></div>
+      <div style="height:35px;"></div>
 
       <div class="accept-invitation-footer">
         <div style="font-size:.725em;color:gray;margin-bottom:2px;">sign-in to your account and acccept this invitation</div>
@@ -125,3 +125,4 @@
     </div>
   </div>
 </div>
+

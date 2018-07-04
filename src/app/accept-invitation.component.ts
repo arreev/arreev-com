@@ -46,6 +46,7 @@ export class AcceptInvitationComponent implements OnInit,OnDestroy
 
   onNotYou() { this.decline(); }
   onCreate() {}
+  onCreateFreeAccountNow() { this.createFreeAccountNow(); }
   onSignIn() { this.signIn(); }
   onDecline() { this.decline(); }
 
@@ -86,17 +87,16 @@ export class AcceptInvitationComponent implements OnInit,OnDestroy
 
     firebase.auth()
       .signInWithEmailAndPassword( this.email,this.password )
-      .then(auth => {
-        this.signInSuccess( auth.user );
+      .then(() => {
+        this.signInSuccess();
       } )
       .catch(e => {
         this.signInOrUpdateFail( e );
       } );
   }
 
-  private signInSuccess( user:firebase.User ) {
-    console.log( user );
-    console.log( 'UID = ' + user.uid );
+  private signInSuccess() {
+    const user:firebase.User = firebase.auth().currentUser;
     const invitation = {
       email: this.invite.email,
       ownerid: this.invite.ownerid,
@@ -143,6 +143,14 @@ export class AcceptInvitationComponent implements OnInit,OnDestroy
   private acceptanceError( r ) {
     this.remove();
     this.errored = true;
+  }
+
+  private createFreeAccountNow() {
+    const queryParams = {
+      action: 'create',
+      email: this.email
+    };
+    this.router.navigate( [ 'home' ],{ queryParams:queryParams } );
   }
 }
 

@@ -1,6 +1,7 @@
 
 import { animate,query,stagger,style,transition,trigger } from '@angular/animations';
 import { Component,OnInit,AfterViewInit,OnDestroy } from '@angular/core';
+import { ActivatedRoute,Router } from '@angular/router';
 import * as firebase from 'firebase';
 import { isBlank } from './util';
 
@@ -57,9 +58,17 @@ export class HomeComponent implements OnInit,AfterViewInit,OnDestroy
   working = false;
   accountcreated = false;
 
-  constructor() {}
+  constructor( private route:ActivatedRoute ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.route.queryParamMap.subscribe(m => {
+      const action:string = m.get( 'action' );
+      if ( 'create' === action ) {
+        this.showcreateaccountdialog = true;
+        this.email = m.get( 'email' );
+      }
+    } );
+  }
 
   ngAfterViewInit(): void {
     setTimeout( () => this.validation(),100 );
